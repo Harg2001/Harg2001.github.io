@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon compte</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="header.js"></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  
+  <main class="container">
+    <h1>Mon compte</h1>
+    <div id="account-info">
+      <p>Email : <span id="user-email"></span></p>
+      <p>Accès Premium : <span id="premium-status"></span></p>
+    </div>
+    
+    <button id="logout-btn">Se déconnecter</button>
+    <button id="delete-btn">Supprimer mon compte</button>
+    <p id="message"></p>
+  </main>
+
+  <script>
+    const token = localStorage.getItem("auth_token");
+	// Simuler récupération avec un token
+	token = 123
+    if (!token) {
+      window.location.href = "signin.html";
+    }
+
+    async function fetchAccount() {
+      const response = await fetch("https://ton-api.com/account", {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      const user = await response.json();
+      document.getElementById("user-email").textContent = user.email;
+      document.getElementById("premium-status").textContent = user.premium ? "Oui" : "Non";
+    }
+
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("auth_token");
+      window.location.href = "signin.html";
+    });
+
+    document.getElementById("delete-btn").addEventListener("click", async () => {
+      if (!confirm("Es-tu sûr de vouloir supprimer ton compte ?")) return;
+      await fetch("https://ton-api.com/account", {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      localStorage.removeItem("auth_token");
+      document.getElementById("message").textContent = "Compte supprimé.";
+      setTimeout(() => window.location.href = "signup.html", 2000);
+    });
+
+    fetchAccount();
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-// Charger et insérer le header dynamiquement
+// Charger et insérer le footer dynamiquement
 	fetch('footer.html')
 	  .then(response => response.text())
 	  .then(data => {

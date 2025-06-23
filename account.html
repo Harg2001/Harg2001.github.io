@@ -17,14 +17,14 @@
   <div id="navigation-placeholder"></div>
   
   <main class="container">
-    <h1>Mon compte</h1>
+    <h2>My account</h2>
     <div id="account-info">
       <p>Email : <span id="user-email"></span></p>
-      <p>Accès Premium : <span id="premium-status"></span></p>
+      <p>Premium Access : <span id="premium-status"></span></p>
     </div>
     
-    <button id="logout-btn">Se déconnecter</button>
-    <button id="delete-btn">Supprimer mon compte</button>
+    <button id="logout-btn">Log out</button>
+    <button id="delete-btn">Delete my account</button>
     <p id="message"></p>
   </main>
 
@@ -33,7 +33,7 @@
   <script>
     const token = localStorage.getItem("auth_token");
 	// Simuler récupération avec un token
-	token = 123
+	// token = 123
     if (!token) {
       window.location.href = "signin.html";
     }

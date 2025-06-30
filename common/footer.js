@@ -1,5 +1,5 @@
 // Charger et insérer le footer dynamiquement
-	fetch('footer.html')
+	fetch('common/footer.html')
 	  .then(response => response.text())
 	  .then(data => {
 		document.getElementById('footer-placeholder').innerHTML = data;

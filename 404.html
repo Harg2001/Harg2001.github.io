@@ -12,14 +12,12 @@
   <script type="module" src="common/navigation.js"></script>
   <script type="module" src="common/footer.js"></script>
   <style>
-    body {
+    main {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
-      background-color: #1e1e1e;
       text-align: center;
     }
     h1 {
@@ -54,12 +52,16 @@
 <body>
   <div id="header-placeholder"></div>
   <div id="navigation-placeholder"></div>
-  <h1>404</h1>
-  <p>Oops! The page you're looking for doesn't exist.</p>
-  <div class="buttons">
-    <button class="home-btn" onclick="window.location.href='index.html'">Go to Home</button>
-    <button class="back-btn" onclick="history.back()">Go Back</button>
-  </div>
+  
+  <main>
+	  <h1>404</h1>
+	  <p>Oops! The page you're looking for doesn't exist.</p>
+	  <div class="buttons">
+		<button class="home-btn" onclick="window.location.href='index.html'">Go to Home</button>
+		<button class="back-btn" onclick="history.back()">Go Back</button>
+	  </div>
+  </main>
+  
   <div id="footer-placeholder"></div>
 </body>
 </html>

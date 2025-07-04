@@ -6,12 +6,72 @@
   <title>Mon compte</title>
   <link rel="icon" type="image/png" href="../common/favicon.png" />
   <link rel="stylesheet" href="../common/styles.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <script type="module" src="../common/header.js"></script>
   <script type="module" src="../common/navigation.js"></script>
   <script type="module" src="../common/footer.js"></script>
+  <style>
+
+.table_image_thumbnail {
+  height: 69px;
+  width: 184px;
+  display: block;
+}
+
+.table__column--width-medium {
+  align-items: center;
+  font-family: monospace;
+  color: #e0e0e0;
+}
+
+.table__column__heading {
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.table__column__heading:hover {
+  text-decoration: underline;
+}
+
+.table__column__key {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95em;
+}
+
+.icon_to_clipboard {
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.key_redeem {
+  background-color: #5c2e91;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 10px;
+  text-decoration: none;
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.key_redeem:hover {
+  background-color: #7349b8;
+}
+
+p {
+  margin: 2px 0;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+  </style>
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -21,8 +81,67 @@
     <h2>My account</h2>
     <div id="account-info">
       <p>Email : <span id="user-email"></span></p>
-      <p>Premium Access : <span id="premium-status"></span></p>
-    </div>
+	  
+	  <table>
+	  <tr>
+		<th>Items</th>
+		<th>Purchased</th>
+		<th>Key</th>
+	  </tr>
+	  <tr>
+		  <td>
+			<a class="table_image_thumbnail"
+			   style="background-image:url(184x69.svg);"
+			   href="#"></a>
+		  </td>
+
+		  <td>
+			<p>
+			  <a class="table__column__heading" href="#">Product 1</a>
+			</p>
+			<p>Purchased <span data-timestamp="1715662800">1 year</span> ago</p>
+		  </td>
+
+		  <td class="table__column--width-medium text-center">
+			<div class="table__column__key">
+			  <i data-clipboard-text="RQFVL-Y4LQE-HDRGG" class="icon_to_clipboard fa fa-fw fa-copy"></i>
+			  <span>RQFVL-Y4LQE-HDRGG</span>
+			  <a rel="nofollow noopener" target="_blank"
+				 href="https://store.steampowered.com/account/registerkey?key=RQFVL-Y4LQE-HDRGG"
+				 class="key_redeem">
+				<i class="fa fa-steam"></i><span>Redeem</span>
+			  </a>
+			</div>
+		  </td>
+	  </tr>
+
+	  <tr">
+		  <td>
+			<a class="table_image_thumbnail"
+			   style="background-image:url(184x69.svg);"
+			   href="#"></a>
+		  </td>
+
+		  <td>
+			<p>
+			  <a class="table__column__heading" href="#">Product 2</a>
+			</p>
+			<p>Purchased <span data-timestamp="1706919900">1 year</span> ago</p>
+		  </td>
+
+		  <td class="table__column--width-medium text-center">
+			<div class="table__column__key">
+			  <i data-clipboard-text="IL227-R4KQP-FQA0R" class="icon_to_clipboard fa fa-fw fa-copy"></i>
+			  <span>IL227-R4KQP-FQA0R</span>
+			  <a rel="nofollow noopener" target="_blank"
+				 href="https://store.steampowered.com/account/registerkey?key=IL227-R4KQP-FQA0R"
+				 class="key_redeem">
+				<i class="fa fa-steam"></i><span>Redeem</span>
+			  </a>
+			</div>
+		  </td>
+	  </tr>
+	</table>
     
     <button id="logout-btn">Log out</button>
     <button id="delete-btn">Delete my account</button>
@@ -45,7 +164,6 @@
       });
       const user = await response.json();
       document.getElementById("user-email").textContent = user.email;
-      document.getElementById("premium-status").textContent = user.premium ? "Oui" : "Non";
     }
 
     document.getElementById("logout-btn").addEventListener("click", () => {

@@ -15,11 +15,12 @@
   <script type="module" src="common/newsletter.js"></script>
   <script type="module" src="common/social.js"></script>
   <style>
-    body {
-	  background-color: #f0f0f0;
-	  color: #111;
-	}
-	.chess-board { border-spacing: 0; border-collapse: collapse; }
+    .chess-container {
+	  display: flex;
+	  align-items: center;
+	  gap: 1rem;
+  }
+	.chess-board { border-spacing: 0; border-collapse: collapse; background-color: #f0f0f0; color: #111; }
 	.chess-board th { padding: .5em; }
 	.chess-board th + th { border-bottom: 1px solid #000; }
 	.chess-board th:first-child,
@@ -35,7 +36,11 @@
   <div id="header-placeholder"></div>
   <div id="navigation-placeholder"></div>
 
-    <table class="chess-board">
+	<main>
+	<section>
+	    <h2>Chess-board</h2>
+		<div class="chess-container">
+		<table class="chess-board">
             <tbody>
                 <tr>
                     <th></th>
@@ -47,6 +52,7 @@
                     <th>f</th>
                     <th>g</th>
                     <th>h</th>
+					<th></th>
                 </tr>
                 <tr>
                     <th>8</th>
@@ -137,8 +143,15 @@
                     <td class="light">♖</td>
                 </tr>
             </tbody>
+			<tbody>
+                <tr>
+                    <th></th>
+                </tr>
+            </tbody>
         </table>
-
+		</div>
+	  </section>
+	  </main>
   <div id="footer-placeholder"></div>
 </body>
 </html>

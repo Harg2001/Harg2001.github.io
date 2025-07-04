@@ -5,6 +5,7 @@
   <title>Galerie</title>
   <link rel="icon" type="image/png" href="../common/favicon.png" />
   <link rel="stylesheet" href="../common/styles.css">
+  <link rel="stylesheet" href="../common/countdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -97,10 +98,11 @@
     .grid .item {
       flex: 0 0 calc(25% - 1rem);
       box-sizing: border-box;
-    }
+    }	
   </style>
   <script type="module" src="../common/header.js"></script>
   <script type="module" src="../common/navigation.js"></script>
+  <script type="module" src="../common/countdown.js"></script>
   <script type="module" src="../common/footer.js"></script>
 </head>
 <body>
@@ -108,6 +110,9 @@
 	<div id="navigation-placeholder"></div>
 
   <div class="gallery-section">
+	<h2>Countdown</h2>
+	<div id="countdown-placeholder"></div>
+	
     <h2>Carousel</h2>
     <div class="carousel">
 	  <a href="#">

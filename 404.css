@@ -1,0 +1,35 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+main h1 {
+  font-size: 6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+main p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-btn {
+  background-color: #40A040;
+  color: white;
+}
+.home-btn:hover {
+  background-color: #306030;
+}
+.back-btn {
+  background-color: #555;
+  color: white;
+}
+.back-btn:hover {
+  background-color: #333;
+}

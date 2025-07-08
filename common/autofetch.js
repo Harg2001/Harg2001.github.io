@@ -1,4 +1,3 @@
-<script>
   document.addEventListener('DOMContentLoaded', () => {
     const list = document.querySelectorAll('[id$="-placeholder"]'); // récupère tous les élément dont id se finit par -placeholder
     
@@ -22,4 +21,3 @@
         });
     });
   });
-</script>

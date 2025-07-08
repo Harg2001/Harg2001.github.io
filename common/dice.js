@@ -23,9 +23,3 @@ function getDiceFace(rollResult) {
 	  return "";
   }
 }
-
-fetch('https://harg2001.github.io/common/dice.html')
-  .then(response => response.text())
-  .then(data => {
-	document.getElementById('dice-placeholder').innerHTML = data;
-  });

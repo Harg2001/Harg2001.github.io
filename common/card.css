@@ -1,0 +1,13 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card {
+  font-size: 4rem;
+  line-height: 1;
+  background-color: #f0f0f0; color: #111;
+}
+.card.red {
+  color: red;
+}

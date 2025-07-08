@@ -191,3 +191,7 @@ button:hover {
 span#blur {
   filter: blur(3px);
 }
+
+span#face {
+  font-family: 'Noto Sans', 'Segoe UI Emoji', 'Apple Color Emoji', 'Symbola', sans-serif;
+}

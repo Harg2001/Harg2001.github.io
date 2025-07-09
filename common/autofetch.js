@@ -1,5 +1,5 @@
   document.addEventListener('DOMContentLoaded', () => {
-    const list = document.querySelectorAll('[id$="-placeholder"]'); // récupère tous les élément dont id se finit par -placeholder
+    const list = document.querySelectorAll('[id$="-placeholder"]'); // tous les élément dont id se termine par -placeholder
     
     list.forEach(el => {
       const name = el.id.replace(/-placeholder$/, '');

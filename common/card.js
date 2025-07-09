@@ -44,7 +44,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
     observer.disconnect();
   }
 });
-
+    console.log(document.body);
 observer.observe(document.body, { childList: true, subtree: true });
 
 

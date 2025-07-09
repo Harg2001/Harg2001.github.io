@@ -2,19 +2,23 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  perspective: 1000px; /* Plus petit = effet plus fort */
+  perspective-origin: center;
 }
 .card {
-  font-size: 4rem;
+  font-size: 8rem;
   line-height: 1;
   background-color: #f0f0f0; color: #111;
   border-radius: 2px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
   will-change: transform;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card:hover {
+  transform: scale(2);
 }
 .card.red {
   color: red;

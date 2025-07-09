@@ -31,10 +31,21 @@ const observer = new MutationObserver((mutationsList, observer) => {
 	  const centerX = rect.width / 2;
 	  const centerY = rect.height / 2;
 
-	  const rotateX = -(y - centerY) / 10;
-	  const rotateY = (x - centerX) / 10;
-
+	  const rotateX = -(y - centerY);
+	  const rotateY = (x - centerX);
+	  
 	  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+	  
+	  // Supposons que rotateX varie entre -30 (vers le haut) et +30 (vers le bas)
+	  const brightness = 1 - rotateX / 90; // = 1 si vers le haut, <1 si vers le bas
+	  card.style.filter = `brightness(${brightness})`;
+
+	  if (rotateX < 0) {
+	    card.style.boxShadow = '0 20px 40px rgba(255,255,255,0.3)';
+	  } else {
+	    card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
+	  }
+	  
 	});
 
 	card.addEventListener('mouseleave', () => {
@@ -44,7 +55,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
     observer.disconnect();
   }
 });
-    console.log(document.body);
+
 observer.observe(document.body, { childList: true, subtree: true });
 
 

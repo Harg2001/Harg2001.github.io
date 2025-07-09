@@ -86,7 +86,7 @@
 		transform: translateY(-288px);
 	  }
 	  66.66667% {
-		transform: translateY(-384px);
+		transform: translateY(-360px);
 	  }
 	  83.33333% {
 		transform: translateY(-432px);
@@ -106,7 +106,7 @@
 		transform: translateY(-288px);
 	  }
 	  40% {
-		transform: translateY(-384px);
+		transform: translateY(-360px);
 	  }
 	  50% {
 		transform: translateY(-432px);

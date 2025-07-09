@@ -33,8 +33,8 @@ const observer = new MutationObserver((mutationsList, observer) => {
 
 	  var rotateX = -(y - centerY);
 	  var rotateY = (x - centerX);
-	  rotateX = Math.min(-60, Math.max(60, Math.round(rotateX))); // clamp
-	  rotateY = Math.min(-60, Math.max(60, Math.round(rotateY))); // clamp
+	  rotateX = Math.min(60, Math.max(-60, Math.round(rotateX))); // clamp
+	  rotateY = Math.min(60, Math.max(-60, Math.round(rotateY))); // clamp
 	  
 	  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(2)`;
 	  

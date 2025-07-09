@@ -17,9 +17,7 @@
   justify-content: center;
   align-items: center;
 }
-.card:hover {
-  transform: scale(2);
-}
+
 .card.red {
   color: red;
 }

@@ -34,22 +34,25 @@ const observer = new MutationObserver((mutationsList, observer) => {
 	  const rotateX = -(y - centerY);
 	  const rotateY = (x - centerX);
 	  
-	  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+	  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(2)`;
 	  
 	  // Supposons que rotateX varie entre -30 (vers le haut) et +30 (vers le bas)
-	  const brightness = 1 - rotateX / 90; // = 1 si vers le haut, <1 si vers le bas
+	  const brightness = 1 - rotateX / 90; // varie entre 0.66 et 1.33
 	  card.style.filter = `brightness(${brightness})`;
 
-	  if (rotateX < 0) {
-	    card.style.boxShadow = '0 20px 40px rgba(255,255,255,0.3)';
-	  } else {
-	    card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
-	  }
+	  const boxShadow-offset-x = 0
+	  const boxShadow-offset-y = 15* (1 + rotateX / 90)
+	  const boxShadow-blur-radius = 15* (1 + rotateX / 90)
+	  const boxShadow-color = 125* (1 + rotateX / 30) // varie entre 0 et 2
+	  
+	  card.style.boxShadow = '${boxShadow-offset-x}px ${boxShadow-offset-y}px ${boxShadow-blur-radius}px rgba(${boxShadow-color},${boxShadow-color},${boxShadow-color},0.3)';
 	  
 	});
 
 	card.addEventListener('mouseleave', () => {
 	  card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+	  card.style.filter = ``;
+	  card.style.boxShadow = '0 10px 10px rgba(0,0,0,0.3)';
 	});
 
     observer.disconnect();

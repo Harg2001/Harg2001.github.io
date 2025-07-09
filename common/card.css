@@ -10,7 +10,7 @@
   line-height: 1;
   background-color: #f0f0f0; color: #111;
   border-radius: 2px;
-  transition: transform 0.1s ease;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
   transform-style: preserve-3d;
   will-change: transform;
   display: flex;

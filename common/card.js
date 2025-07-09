@@ -40,12 +40,13 @@ const observer = new MutationObserver((mutationsList, observer) => {
 	  const brightness = 1 - rotateX / 90; // varie entre 0.66 et 1.33
 	  card.style.filter = `brightness(${brightness})`;
 
-	  const boxShadow-offset-x = 0
-	  const boxShadow-offset-y = 15* (1 + rotateX / 90)
-	  const boxShadow-blur-radius = 15* (1 + rotateX / 90)
-	  const boxShadow-color = 125* (1 + rotateX / 30) // varie entre 0 et 2
+	  const boxShadowOffsetX = 0
+	  const boxShadowOffsetY = 15* (1 + rotateX / 90)
+	  const boxShadowBlurRadius = 15* (1 + rotateX / 90)
+	  const boxShadowColor = 125* (1 + rotateX / 30) // varie entre 0 et 2
+	  boxShadowColor = Math.min(255, Math.max(0, Math.round(boxShadowColor))); // clamp 0-255
 	  
-	  card.style.boxShadow = '${boxShadow-offset-x}px ${boxShadow-offset-y}px ${boxShadow-blur-radius}px rgba(${boxShadow-color},${boxShadow-color},${boxShadow-color},0.3)';
+	  card.style.boxShadow = `${shadowOffsetX}px ${shadowOffsetY}px ${shadowBlur}px rgba(${shadowColorValue}, ${shadowColorValue}, ${shadowColorValue}, 0.3)`;
 	  
 	});
 

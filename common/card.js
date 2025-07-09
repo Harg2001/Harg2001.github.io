@@ -19,7 +19,7 @@ function pickCard() {
 	cardEl.className = redSuits.includes(pickone) ? "card red" : "card";
 }
 
-const observer = new MutationObserver((mutationsList, observer) => {
+const cardObserver = new MutationObserver((mutationsList, cardObserver) => {
   const card = document.querySelector('.card');
   if (card) {
 	// L'élément est présent !
@@ -58,10 +58,10 @@ const observer = new MutationObserver((mutationsList, observer) => {
 	  card.style.boxShadow = '0px 10px 10px rgba(0,0,0,0.3)';
 	});
 
-    observer.disconnect();
+    cardObserver.disconnect();
   }
 });
 
-observer.observe(document.body, { childList: true, subtree: true });
+cardObserver.observe(document.body, { childList: true, subtree: true });
 
 

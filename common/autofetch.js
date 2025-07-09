@@ -23,7 +23,7 @@
 	
   });
 
-const observer = new MutationObserver((mutationsList, observer) => {
+const faceObserver = new MutationObserver((mutationsList, faceObserver) => {
   const face = document.querySelector('#face');
   if (face) {
 	
@@ -37,9 +37,9 @@ const observer = new MutationObserver((mutationsList, observer) => {
 	  
 	}
 
-    observer.disconnect();
+    faceObserver.disconnect();
   });
 
-observer.observe(document.body, { childList: true, subtree: true });
+faceObserver.observe(document.body, { childList: true, subtree: true });
 
 

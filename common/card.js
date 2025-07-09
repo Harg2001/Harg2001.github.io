@@ -37,7 +37,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
 	  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(2)`;
 	  
 	  // Supposons que rotateX varie entre -30 (vers le haut) et +30 (vers le bas)
-	  const brightness = 1 - rotateX / 90; // varie entre 0.66 et 1.33
+	  const brightness = 1 + rotateX / 90; // varie entre 0.66 et 1.33
 	  card.style.filter = `brightness(${brightness})`;
 
 	  const boxShadowOffsetX = 0

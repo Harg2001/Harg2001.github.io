@@ -35,11 +35,10 @@ const observer = new MutationObserver((mutationsList, observer) => {
     var pickone = faces[Math.floor(Math.random()*faces.length)];
     face.innerText = pickone;
 	  
-	});
+	}
 
     observer.disconnect();
-  }
-});
+  });
 
 observer.observe(document.body, { childList: true, subtree: true });
 

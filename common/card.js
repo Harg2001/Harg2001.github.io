@@ -48,7 +48,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
 	  var boxShadowColor = 125* (1 + rotateX / 50) // varie entre 0 et 2
 	  boxShadowColor = Math.min(255, Math.max(0, Math.round(boxShadowColor))); // clamp 0-255
 	  
-	  card.style.boxShadow = `${shadowOffsetX}px ${shadowOffsetY}px ${shadowBlur}px rgba(${shadowColorValue}, ${shadowColorValue}, ${shadowColorValue}, 0.3)`;
+	  card.style.boxShadow = `${boxShadowOffsetX}px ${boxShadowOffsetY}px ${boxShadowBlurRadius}px rgba(${boxShadowColor}, ${boxShadowColor}, ${boxShadowColor}, 0.3)`;
 	  
 	});
 

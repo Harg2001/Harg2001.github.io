@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milestones</title>
+  <link rel="icon" type="image/png" href="common/favicon.png" />
+  <link rel="stylesheet" href="common/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="common/autofetch.js" defer></script>
+  <style>
+    .milestone-group {
+      background: #222;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .milestone {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .milestone input[type="checkbox"] {
+      margin-right: 0.75rem;
+    }
+    .milestone label {
+      flex: 1;
+    }
+    .milestone-date {
+      font-size: 0.85em;
+      color: #777;
+    }
+    .progress-container {
+      background-color: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 20px;
+      margin-top: 0.5rem;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #4caf50;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <div id="navigation-placeholder"></div>
+  
+  <main>
+  <h2>Milestones</h2>
+
+  <div class="milestone-group" data-completed="2" data-total="4">
+    <h2>Phase 1: Prototype</h2>
+    <div class="milestone">
+      <input type="checkbox" checked disabled>
+      <label>
+        Project Initialization
+        <div class="milestone-date">Completed on: 2024-12-10</div>
+      </label>
+    </div>
+    <div class="milestone">
+      <input type="checkbox" checked disabled>
+      <label>
+        Base Architecture Defined
+        <div class="milestone-date">Completed on: 2025-01-05</div>
+      </label>
+    </div>
+    <div class="milestone">
+      <input type="checkbox" disabled>
+      <label>
+        Set Up Deployment Pipeline
+      </label>
+    </div>
+    <div class="milestone">
+      <input type="checkbox" disabled>
+      <label>
+        Define Feature Roadmap
+      </label>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <div class="milestone-group" data-completed="0" data-total="3">
+    <h2>Phase 2: Website</h2>
+    <div class="milestone">
+      <input type="checkbox" disabled>
+      <label>
+        Implement Core Features
+      </label>
+    </div>
+    <div class="milestone">
+      <input type="checkbox" disabled>
+      <label>
+        Internal Testing
+      </label>
+    </div>
+    <div class="milestone">
+      <input type="checkbox" disabled>
+      <label>
+        Release Beta Version
+      </label>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.querySelectorAll('.milestone-group').forEach(group => {
+      const completed = Number(group.dataset.completed);
+      const total = Number(group.dataset.total);
+      const percent = total > 0 ? (completed / total * 100) : 0;
+      group.querySelector('.progress-bar').style.width = percent + '%';
+    });
+  </script>
+</body>
+</html>

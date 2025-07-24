@@ -23,8 +23,9 @@
     }
 
     .item img {
-      width: 100%;
-      height: auto;
+	  width: 376px;
+	  height: 215px;
+	  object-fit: cover;
       display: block;
     }
 

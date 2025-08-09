@@ -15,7 +15,7 @@
         .then(html => {
           el.innerHTML = html;
 		  
-		  const face = html.querySelector('#face');
+		  const face = el.querySelector('#face');
 		  if (face) {
 			
 			// Now that the header is loaded, find the 'face' element and update it
@@ -27,7 +27,6 @@
 			face.innerText = pickone;
 			  
 			}
-		  el.innerHTML = html;
 		  
         })
         .catch(err => {

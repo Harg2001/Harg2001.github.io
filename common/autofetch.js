@@ -17,7 +17,6 @@
 		  
 		  const face = el.querySelector('#face');
 		  if (face) {
-			
 			// Now that the header is loaded, find the 'face' element and update it
 			var faces = Array("( ͡° ͜ʖ ͡°)", "¯\_(ツ)_/¯", "ヽ༼ຈل͜ຈ༽ﾉ", "ಠ_ಠ", "¯\(°_o)/¯", "( ﾟдﾟ)", "இдஇ", "(≧▽≦)", "(´_ゝ`)", "´• ل •`", "ʕ•ᴥ•ʔ", "ᶘᵒᴥᵒᶅ", "(▀̿̿Ĺ̯̿▀̿ ̿)", "(ㆁωㆁ*)", "(•ө•)♡", "(/◕ヮ◕)/", "(^_^.)",
 			"(◉ω◉)", "^오^", "(*´∀｀)", "•̀.̫•́✧", "(๑´ڡ`๑)", "(・∀・)", "༼ ºلº ༽", "ლ(´ڡ`ლ)", "ヽ(^o^)丿", "(*^_^*)", "٩(♡ε♡ )۶", "(๑•̀ㅂ•́)ﻭ✧", "(๑˃̵ᴗ˂̵)ﻭ", "(^o^)", "(✿◠‿◠)", "(＾ｕ＾)", "(-_-;)", "^_^;", "(^o^;", "(ーー;)", "('・ω・')",
@@ -25,7 +24,6 @@
 			"(・へ・)", "(~_~メ)", "(ノಠ益ಠ)", "囧", "◕‿◕", "ó_ò", "♪♫*•♪", "◝(ᵔᗜᵔ)◜", "(🌸◠‿◠)", "(ง ˃ ³ ˂)ว", "( ͡ᵔ ͜ʖ ͡ᵔ )");
 			var pickone = faces[Math.floor(Math.random()*faces.length)];
 			face.innerText = pickone;
-			  
 			}
 		  
         })
@@ -37,23 +35,9 @@
 	
   });
 
-const faceObserver = new MutationObserver((mutationsList, faceObserver) => {
-  const face = document.querySelector('#face');
-  if (face) {
+/*const faceObserver = new MutationObserver((mutationsList, faceObserver) => {
 	
-	// Now that the header is loaded, find the 'face' element and update it
-    var faces = Array("( ͡° ͜ʖ ͡°)", "¯\_(ツ)_/¯", "ヽ༼ຈل͜ຈ༽ﾉ", "ಠ_ಠ", "¯\(°_o)/¯", "( ﾟдﾟ)", "இдஇ", "(≧▽≦)", "(´_ゝ`)", "´• ل •`", "ʕ•ᴥ•ʔ", "ᶘᵒᴥᵒᶅ", "(▀̿̿Ĺ̯̿▀̿ ̿)", "(ㆁωㆁ*)", "(•ө•)♡", "(/◕ヮ◕)/", "(^_^.)",
-    "(◉ω◉)", "^오^", "(*´∀｀)", "•̀.̫•́✧", "(๑´ڡ`๑)", "(・∀・)", "༼ ºلº ༽", "ლ(´ڡ`ლ)", "ヽ(^o^)丿", "(*^_^*)", "٩(♡ε♡ )۶", "(๑•̀ㅂ•́)ﻭ✧", "(๑˃̵ᴗ˂̵)ﻭ", "(^o^)", "(✿◠‿◠)", "(＾ｕ＾)", "(-_-;)", "^_^;", "(^o^;", "(ーー;)", "('・ω・')",
-    "(；´Д｀)", "(；･`д･´)", "(´-﹏-`；)", "m(_ _;)m", "( ﾟдﾟ)", "(゜o゜)", "(T_T)", "(｡ŏ﹏ŏ)", "(¯―¯٥)", "(｡>﹏<｡)", "(ಥ﹏ಥ)", "༼ಢ_ಢ༽", "(๑´•.̫ • `๑)", "(-̩̩-̩̩͡_-̩̩-̩̩͡)", "'ㅂ'", "'ㅅ'", "-ㅅ-", "(︶^︶)", "→_→",
-    "(・へ・)", "(~_~メ)", "(ノಠ益ಠ)", "囧", "◕‿◕", "ó_ò", "♪♫*•♪", "◝(ᵔᗜᵔ)◜", "(🌸◠‿◠)", "(ง ˃ ³ ˂)ว", "( ͡ᵔ ͜ʖ ͡ᵔ )");
-    var pickone = faces[Math.floor(Math.random()*faces.length)];
-    face.innerText = pickone;
-	  
-	}
-
     faceObserver.disconnect();
   });
 
-faceObserver.observe(document.body, { childList: true, subtree: true });
-
-
+faceObserver.observe(document.body, { childList: true, subtree: true });*/

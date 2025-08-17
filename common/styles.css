@@ -94,8 +94,8 @@ a:hover {
 img {
   max-width: 100%;
   height: auto;
-  margin-top: 1rem;
-  border: 1px solid #333;
+  margin: 1rem;
+  /*border: 1px solid #333;*/
   border-radius: 4px;
 }
 

@@ -23,9 +23,9 @@
     }
 
     .item img {
-	  width: 376px;
+	  width: 355px;
 	  height: 215px;
-	  object-fit: cover;
+	  object-fit: contain;
       display: block;
     }
 

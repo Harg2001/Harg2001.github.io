@@ -5,11 +5,18 @@
       const name = el.id.replace(/-placeholder$/, '');
       if (!name) return;
 	  
-      const url = `https://harg2001.github.io/common/${name}.html`;
+	  var origin = window.location.origin
+    if(origin == 'file://')
+      origin = 'https://harg2001.github.io'
+
+	  var url = `${origin}/common/${name}.html`;
+	  if(name.includes("/"))
+		url = `${origin}/${name}.html`;
       
       fetch(url)
         .then(response => {
-          if (!response.ok) throw new Error(`Erreur de chargement : ${url}`);
+          if (!response.ok) 
+			  throw new Error(`Erreur de chargement : ${url}`);
           return response.text();
         })
         .then(html => {

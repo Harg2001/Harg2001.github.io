@@ -46,6 +46,7 @@ class ShareActions extends HTMLElement {
         title: pickone, // this.title,
         url: this.url,
         // text: this.description // To enable after adding description on all pages.
+        // TODO try to add an image file to use as cover (include CTA)
       })
       .then(() => {
         this.renderAlert("Thanks!", context);

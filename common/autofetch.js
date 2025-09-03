@@ -116,6 +116,12 @@ class ShareActions extends HTMLElement {
       return;
     }
 
+    var messages = Array("Share if you like", "Tell your friends about this!", "Spread the word", "Sharing is caring", "Your friends will love this! Share it",
+      "Share this page with a friend.", "Love this? Share it with your network!", "Found this awesome? Share it on social media!", "Help others by sharing this page with your community.",
+      "Sharing can increase the satisfaction of your daily life", "Share is a way to achieve immortality.", "No joy without sharing.", "Life is all about sharing.", "Share if you dare"
+    );
+      var pickone = messages[Math.floor(Math.random()*messages.length)];
+
     // Support of at least one API is available so now we render those buttons conditionally
     this.innerHTML = `
       <ul class="share-actions cluster" role="list">
@@ -123,13 +129,19 @@ class ShareActions extends HTMLElement {
           this.hasShareSupport
             ? `
           <li>
-            <button class="button" data-method="share">Share</button>
+            <button class="button" data-method="share">${pickone}</button>
             <div role="alert"></div>
           </li>
         `
             : ""
         }
-        ${
+      </ul>
+    `;
+
+    // Copy URL disabled.
+
+    /*
+    ${
           this.hasClipboardSupport
             ? `
           <li>
@@ -139,9 +151,7 @@ class ShareActions extends HTMLElement {
         `
             : ""
         }
-      </ul>
-
-    `;
+    */
 
     // Buttons are now rendered so we can assign the events
     this.assignEvents();

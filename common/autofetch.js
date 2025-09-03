@@ -37,11 +37,15 @@ class ShareActions extends HTMLElement {
   // Takes the event trigger context (<button>), triggers the share API, then passes that
   // context and alert text to the renderAlert method
   triggerShare(context) {
+    var messages = Array("I liked what i saw here ", "I'll tell you this ", "Spread the word ", "Sharing is caring ", "You'll love this ",
+      "This is awesome ", "My satisfaction increased with this ", "One more step to achieve immortality ", "I dare you to click this "
+    );
+      var pickone = messages[Math.floor(Math.random()*messages.length)];
     navigator
       .share({
-        title: this.title,
+        title: pickone, // this.title,
         url: this.url,
-        text: this.description
+        // text: this.description // To enable after adding description on all pages.
       })
       .then(() => {
         this.renderAlert("Thanks!", context);

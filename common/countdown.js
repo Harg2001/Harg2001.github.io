@@ -4,17 +4,6 @@
 const END_AT = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 // Or set a fixed time: new Date('2025-12-01T23:59:59Z');
 
-// --- Elements ---
-const el = {
-  d: document.getElementById('days'),
-  h: document.getElementById('hours'),
-  m: document.getElementById('minutes'),
-  s: document.getElementById('seconds'),
-  status: document.getElementById('statusMsg'),
-  joinBtn: document.getElementById('joinBtn'),
-  signIn: document.getElementById('signInLink')
-};
-
 // --- Helpers ---
 const clampZero = n => Math.max(0, n);
 const pad2 = n => String(n).padStart(2, '0');
@@ -29,37 +18,49 @@ function getParts(ms){
   return { days, hours, minutes, seconds };
 }
 
-function renderEnded(){
-  el.d.textContent = '00';
-  el.h.textContent = '00';
-  el.m.textContent = '00';
-  el.s.textContent = '00';
-  el.status.textContent = 'This contest has ended.';
-  el.status.classList.add('status--ended');
-  el.joinBtn.setAttribute('disabled', 'true');
-}
+document.addEventListener('DOMContentLoaded', () => {
 
-function tick(){
-  const now = new Date();
-  const diff = END_AT - now;
-
-  if (diff <= 0){
-    renderEnded();
-    clearInterval(timer);
-    return;
+  // --- Elements ---
+  const el = {
+    d: document.getElementById('days'),
+    h: document.getElementById('hours'),
+    m: document.getElementById('minutes'),
+    s: document.getElementById('seconds'),
+    status: document.getElementById('statusMsg'),
+    joinBtn: document.getElementById('joinBtn'),
+    signIn: document.getElementById('signInLink')
+  };
+  
+  function renderEnded(){
+    el.d.textContent = '00';
+    el.h.textContent = '00';
+    el.m.textContent = '00';
+    el.s.textContent = '00';
+    el.status.textContent = 'This contest has ended.';
+    el.status.classList.add('status--ended');
+    el.joinBtn.setAttribute('disabled', 'true');
   }
 
-  const { days, hours, minutes, seconds } = getParts(diff);
-  el.d.textContent = pad2(days);
-  el.h.textContent = pad2(hours);
-  el.m.textContent = pad2(minutes);
-  el.s.textContent = pad2(seconds);
-  el.status.textContent = 'This contest ends in:';
-  el.status.classList.remove('status--ended');
-  el.joinBtn.removeAttribute('disabled');
+  function tick(){
+    const now = new Date();
+    const diff = END_AT - now;
+
+    if (diff <= 0){
+      renderEnded();
+      clearInterval(timer);
+      return;
+    }
+
+    const { days, hours, minutes, seconds } = getParts(diff);
+    el.d.textContent = pad2(days);
+    el.h.textContent = pad2(hours);
+    el.m.textContent = pad2(minutes);
+    el.s.textContent = pad2(seconds);
+    el.status.textContent = 'This contest ends in:';
+    el.status.classList.remove('status--ended');
+    el.joinBtn.removeAttribute('disabled');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
   // Fire initial tick and start interval
   tick();
   const timer = setInterval(tick, 1000);

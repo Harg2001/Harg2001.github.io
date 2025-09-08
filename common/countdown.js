@@ -25,6 +25,15 @@ const countdownObserver = new MutationObserver((mutationsList, countdownObserver
     countdownObserver.disconnect();
     // L'élément est présent !
 
+    const token = localStorage.getItem("auth_token");
+    // Simuler récupération avec un token
+    // token = 123
+    if (token) {
+      document.getElementById("cta-row").innerHTML = '<button id="joinBtn" class="btn">Join Now</button>'
+    } else {
+      document.getElementById("cta-row").innerHTML = 'You should <a href="#" id="signInLink">sign in</a> first.'
+    }
+
     // --- Elements ---
     const el = {
       d: document.getElementById('days'),
@@ -43,7 +52,7 @@ const countdownObserver = new MutationObserver((mutationsList, countdownObserver
       el.s.textContent = '00';
       el.status.textContent = 'This contest has ended.';
       el.status.classList.add('status--ended');
-      el.joinBtn.setAttribute('disabled', 'true');
+      if(el.join) el.joinBtn.setAttribute('disabled', 'true');
     }
 
     function tick(){
@@ -63,32 +72,23 @@ const countdownObserver = new MutationObserver((mutationsList, countdownObserver
       el.s.textContent = pad2(seconds);
       el.status.textContent = 'This contest ends in:';
       el.status.classList.remove('status--ended');
-      el.joinBtn.removeAttribute('disabled');
-    }
-
-    // Fire initial tick and start interval
-    tick();
-    const timer = setInterval(tick, 1000);
-
-    const token = localStorage.getItem("auth_token");
-    // Simuler récupération avec un token
-    // token = 123
-    if (token) {
-      document.getElementById("cta-row").innerHTML = '<button id="joinBtn" class="btn">Join Now</button>'
-    } else {
-      document.getElementById("cta-row").innerHTML = 'You should <a href="#" id="signInLink">sign in</a> first.'
+      if(el.join) el.joinBtn.removeAttribute('disabled');
     }
 
     // Demo actions (replace with your own handlers)
-    el.joinBtn.addEventListener('click', () => {
+    if (el.joinBtn) el.joinBtn.addEventListener('click', () => {
       if (el.joinBtn.hasAttribute('disabled')) return;
       alert('Thanks for joining! This feature is not yet completed.');
     });
-    el.signIn.addEventListener('click', (e) => {
+    if (el.signIn) el.signIn.addEventListener('click', (e) => {
       e.preventDefault();
       window.location.href = "https://harg2001.github.io/account/signin.html";
       alert('Sign-in clicked. This feature is not yet completed.');
     });
+
+    // Fire initial tick and start interval
+    tick();
+    const timer = setInterval(tick, 1000);
 
     // Progressive enhancement: reduce motion preference
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');

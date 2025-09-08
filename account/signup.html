@@ -40,15 +40,17 @@
       const email = e.target.email.value;
       const password = e.target.password.value;
 
-      // TODO: envoyer ces infos vers ton backend ou webhook Make/Zapier
-      const response = await fetch("https://ton-api.com/signup", {
+      alert('Thanks for signup. This feature is not yet completed.');
+
+      // TODO backend ou webhook Make/Zapier
+      /*const response = await fetch("https://ton-api.com/signup", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" }
       });
 
       const result = await response.json();
-      document.getElementById("message").textContent = result.message || "Inscription réussie.";
+      document.getElementById("message").textContent = result.message || "Signup succeed.";*/
     });
   </script>
 </body>

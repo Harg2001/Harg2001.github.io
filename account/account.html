@@ -72,6 +72,15 @@ p {
   </style>
 </head>
 <body>
+ <script>
+    const token = localStorage.getItem("auth_token");
+	// Simuler récupération avec un token
+	// token = 123
+    if (!token) {
+      window.location.href = "signin.html";
+    }
+  </script>
+
   <div id="header-placeholder"></div>
   <div id="navigation-placeholder"></div>
   
@@ -151,19 +160,13 @@ p {
   <div id="footer-placeholder"></div>
 
   <script>
-    const token = localStorage.getItem("auth_token");
-	// Simuler récupération avec un token
-	// token = 123
-    if (!token) {
-      window.location.href = "signin.html";
-    }
-
     async function fetchAccount() {
-      const response = await fetch("https://ton-api.com/account", {
+      // TODO backend
+      /*const response = await fetch("https://ton-api.com/account", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const user = await response.json();
-      document.getElementById("user-email").textContent = user.email;
+      document.getElementById("user-email").textContent = user.email;*/
     }
 
     document.getElementById("logout-btn").addEventListener("click", () => {
@@ -172,13 +175,16 @@ p {
     });
 
     document.getElementById("delete-btn").addEventListener("click", async () => {
-      if (!confirm("Es-tu sûr de vouloir supprimer ton compte ?")) return;
-      await fetch("https://ton-api.com/account", {
+      if (!confirm("Do you really want to delete your account ?")) 
+        alert('Account NOT deleted.');
+      // TODO backend
+      /*await fetch("https://ton-api.com/account", {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
-      });
+      });*/
       localStorage.removeItem("auth_token");
-      document.getElementById("message").textContent = "Compte supprimé.";
+      alert('Account deleted.');
+      document.getElementById("message").textContent = "Account deleted.";
       setTimeout(() => window.location.href = "signup.html", 2000);
     });
 

@@ -1,93 +1,50 @@
-<div id="countdown">
-	<div class='wrapper'>
-	  <div class='time-part-wrapper'>
-		<div class='time-part minutes tens'>
-		  <div class='digit-wrapper'>
-			<span class='digit'>0</span>
-			<span class='digit'>5</span>
-			<span class='digit'>4</span>
-			<span class='digit'>3</span>
-			<span class='digit'>2</span>
-			<span class='digit'>1</span>
-			<span class='digit'>0</span>
-		  </div>
-		</div>
-		<div class='time-part minutes ones'>
-		  <div class='digit-wrapper'>
-			<span class='digit'>0</span>
-			<span class='digit'>9</span>
-			<span class='digit'>8</span>
-			<span class='digit'>7</span>
-			<span class='digit'>6</span>
-			<span class='digit'>5</span>
-			<span class='digit'>4</span>
-			<span class='digit'>3</span>
-			<span class='digit'>2</span>
-			<span class='digit'>1</span>
-			<span class='digit'>0</span>
-		  </div>
-		</div>
-	  </div>
-	  <div class='time-part-wrapper'>
-		<div class='time-part seconds tens'>
-		  <div class='digit-wrapper'>
-			<span class='digit'>0</span>
-			<span class='digit'>5</span>
-			<span class='digit'>4</span>
-			<span class='digit'>3</span>
-			<span class='digit'>2</span>
-			<span class='digit'>1</span>
-			<span class='digit'>0</span>
-		  </div>
-		</div>
-		<div class='time-part seconds ones'>
-		  <div class='digit-wrapper'>
-			<span class='digit'>0</span>
-			<span class='digit'>9</span>
-			<span class='digit'>8</span>
-			<span class='digit'>7</span>
-			<span class='digit'>6</span>
-			<span class='digit'>5</span>
-			<span class='digit'>4</span>
-			<span class='digit'>3</span>
-			<span class='digit'>2</span>
-			<span class='digit'>1</span>
-			<span class='digit'>0</span>
-		  </div>
-		</div>
-	  </div>
-	  <div class='time-part-wrapper'>
-		<div class='time-part hundredths tens'>
-		  <div class='digit-wrapper'>
-			<span class='digit'>0</span>
-			<span class='digit'>9</span>
-			<span class='digit'>8</span>
-			<span class='digit'>7</span>
-			<span class='digit'>6</span>
-			<span class='digit'>5</span>
-			<span class='digit'>4</span>
-			<span class='digit'>3</span>
-			<span class='digit'>2</span>
-			<span class='digit'>1</span>
-			<span class='digit'>0</span>
-		  </div>
-		</div>
-		<div class='time-part hundredths ones'>
-		  <div class='digit-wrapper'>
-			<span class='digit'>0</span>
-			<span class='digit'>9</span>
-			<span class='digit'>8</span>
-			<span class='digit'>7</span>
-			<span class='digit'>6</span>
-			<span class='digit'>5</span>
-			<span class='digit'>4</span>
-			<span class='digit'>3</span>
-			<span class='digit'>2</span>
-			<span class='digit'>1</span>
-			<span class='digit'>0</span>
-		  </div>
-		</div>
-	  </div>
-	</div>
+<h2>Countdown</h2>
+<section class="card_section" aria-labelledby="title">
+      <div class="card__inner">
+        <div class="eyebrow" aria-hidden="true">
+          <span class="eyebrow__dot"></span>
+          LIVE NOW
+        </div>
 
-	</div>
+        <h1 id="title">Timed event</h1>
+        <p class="sub">Enter our awesome giveaway for a chance to bag yourself a reward! Hurry up and participate now, as this exclusive offer won’t last forever.</p>
+
+        <div class="cta-row">
+          <script>
+            const token = localStorage.getItem("auth_token");
+            // Simuler récupération avec un token
+            // token = 123
+            if (token) {
+              document.getElementById("cta-row").innerHTML = '<button id="joinBtn" class="btn">Join Now</button>'
+            } else {
+              document.getElementById("cta-row").innerHTML = 'You should <a href="#" id="signInLink">sign in</a> first.'
+            }
+          </script>
+        </div>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+
+        <div class="status" id="statusMsg" aria-live="polite">This contest ends in:</div>
+
+        <div class="countdown" aria-label="Giveaway countdown" role="group">
+          <div class="tile" aria-live="off">
+            <div class="num" id="days">00</div>
+            <span class="label">Days</span>
+          </div>
+          <div class="tile" aria-live="off">
+            <div class="num" id="hours">00</div>
+            <span class="label">Hours</span>
+          </div>
+          <div class="tile" aria-live="off">
+            <div class="num" id="minutes">00</div>
+            <span class="label">Minutes</span>
+          </div>
+          <div class="tile" aria-live="off">
+            <div class="num" id="seconds">00</div>
+            <span class="label">Seconds</span>
+          </div>
+        </div>
+
+        <p class="micro">No purchase necessary. By joining, you agree to the official rules and our terms.</p>
+      </div>
+    </section>

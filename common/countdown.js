@@ -22,6 +22,7 @@ const countdownObserver = new MutationObserver((mutationsList, countdownObserver
   const countdown = document.querySelector('.countdown');
   const ctarow = document.querySelector('.cta-row');
   if (countdown && ctarow) {
+    countdownObserver.disconnect();
     // L'élément est présent !
 
     // --- Elements ---
@@ -63,7 +64,7 @@ const countdownObserver = new MutationObserver((mutationsList, countdownObserver
       el.status.textContent = 'This contest ends in:';
       el.status.classList.remove('status--ended');
       el.joinBtn.removeAttribute('disabled');
-  }
+    }
 
     // Fire initial tick and start interval
     tick();
@@ -94,8 +95,6 @@ const countdownObserver = new MutationObserver((mutationsList, countdownObserver
     if (mq.matches){
       document.documentElement.style.setProperty('--blur', 'saturate(120%) blur(0px)');
     }
-  
-  countdownObserver.disconnect();
   }
 });
 

@@ -88,68 +88,78 @@ p {
     <h2>My account</h2>
     <div id="account-info">
       <p>Email : <span id="user-email"></span></p>
+    </div>
 	  
-	  <table>
-	  <tr>
-		<th>Items</th>
-		<th>Purchased</th>
-		<th>Key</th>
-	  </tr>
-	  <tr>
-		  <td>
-			<a class="table_image_thumbnail"
-			   style="background-image:url('https://res.cloudinary.com/db1mkizr6/image/upload/v1756834762/184x69_i46ifw.svg');"
-			   href="#"></a>
-		  </td>
+    <div id="billing-info">
+      <p>Name : <span id="user-name"></span></p>
+      <p>Address : <span id="user-address"></span></p>
+    </div>
 
-		  <td>
-			<p>
-			  <a class="table__column__heading" href="#">Product 1</a>
-			</p>
-			<p>Purchased <span data-timestamp="1715662800">1 year</span> ago</p>
-		  </td>
+    <table>
+      <tr>
+        <th>Items</th>
+        <th>Purchased</th>
+        <th>Key</th>
+      </tr>
+      <tr>
+        <td>
+          <a class="table_image_thumbnail"
+            style="background-image:url('https://res.cloudinary.com/db1mkizr6/image/upload/v1756834762/184x69_i46ifw.svg');"
+            href="#"></a>
+        </td>
 
-		  <td class="table__column--width-medium text-center">
-			<div class="table__column__key">
-			  <i data-clipboard-text="RQFVL-Y4LQE-HDRGG" class="icon_to_clipboard fa fa-fw fa-copy"></i>
-			  <span>RQFVL-Y4LQE-HDRGG</span>
-			  <a rel="nofollow noopener" target="_blank"
-				 href="https://store.steampowered.com/account/registerkey?key=RQFVL-Y4LQE-HDRGG"
-				 class="key_redeem">
-				<i class="fa fa-steam"></i><span>Redeem</span>
-			  </a>
-			</div>
-		  </td>
-	  </tr>
+        <td>
+          <p>
+            <a class="table__column__heading" href="#">Product 1</a>
+          </p>
+          <p>Purchased <span data-timestamp="1715662800">1 year</span> ago</p>
+        </td>
 
-	  <tr">
-		  <td>
-			<a class="table_image_thumbnail"
-			   style="background-image:url('https://res.cloudinary.com/db1mkizr6/image/upload/v1756834762/184x69_i46ifw.svg');"
-			   href="#"></a>
-		  </td>
+        <td class="table__column--width-medium text-center">
+          <div class="table__column__key">
+            <i data-clipboard-text="RQFVL-Y4LQE-HDRGG" class="icon_to_clipboard fa fa-fw fa-copy"></i>
+            <span>RQFVL-Y4LQE-HDRGG</span>
+            <a rel="nofollow noopener" target="_blank"
+            href="https://store.steampowered.com/account/registerkey?key=RQFVL-Y4LQE-HDRGG"
+            class="key_redeem">
+              <i class="fa fa-steam"></i><span>Redeem</span>
+            </a>
+          </div>
+        </td>
+      </tr>
 
-		  <td>
-			<p>
-			  <a class="table__column__heading" href="#">Product 2</a>
-			</p>
-			<p>Purchased <span data-timestamp="1706919900">1 year</span> ago</p>
-		  </td>
+      <tr">
+        <td>
+          <a class="table_image_thumbnail"
+            style="background-image:url('https://res.cloudinary.com/db1mkizr6/image/upload/v1756834762/184x69_i46ifw.svg');"
+            href="#"></a>
+        </td>
 
-		  <td class="table__column--width-medium text-center">
-			<div class="table__column__key">
-			  <i data-clipboard-text="IL227-R4KQP-FQA0R" class="icon_to_clipboard fa fa-fw fa-copy"></i>
-			  <span>IL227-R4KQP-FQA0R</span>
-			  <a rel="nofollow noopener" target="_blank"
-				 href="https://store.steampowered.com/account/registerkey?key=IL227-R4KQP-FQA0R"
-				 class="key_redeem">
-				<i class="fa fa-steam"></i><span>Redeem</span>
-			  </a>
-			</div>
-		  </td>
-	  </tr>
-	</table>
+        <td>
+          <p>
+            <a class="table__column__heading" href="#">Product 2</a>
+          </p>
+          <p>Purchased <span data-timestamp="1706919900">1 year</span> ago</p>
+        </td>
+
+        <td class="table__column--width-medium text-center">
+          <div class="table__column__key">
+            <i data-clipboard-text="IL227-R4KQP-FQA0R" class="icon_to_clipboard fa fa-fw fa-copy"></i>
+            <span>IL227-R4KQP-FQA0R</span>
+            <a rel="nofollow noopener" target="_blank"
+            href="https://store.steampowered.com/account/registerkey?key=IL227-R4KQP-FQA0R"
+            class="key_redeem">
+              <i class="fa fa-steam"></i><span>Redeem</span>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
     
+    <div id="consent-info">
+      <button id="newsletter-optout-btn">Communication opt-out</button>
+    </div>
+
     <button id="logout-btn">Log out</button>
     <button id="delete-btn">Delete my account</button>
     <!-- TODO add an explanation regarding GDPR and the deletion will be immediate and no-recoverable. -->

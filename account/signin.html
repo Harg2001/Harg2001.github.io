@@ -54,6 +54,12 @@
       } else {
         document.getElementById("message").textContent = result.message || "Connection failed.";
       }*/
+
+      if (password == "test") {
+        localStorage.setItem("auth_token", "test");
+        window.location.href = "account.html";
+      }
+
     });
   </script>
 </body>

@@ -19,7 +19,15 @@
   <main>
     <section>
       <h2>Ads wall</h2>
-      Test ads here.
+      <p>Annonces avec récompense</p>
+      <ul>
+        <li>La récompense ne peut être utilisée que pour un article ou un service sur le présent site Web et les applications.</li>
+        <li>La récompense n'est pas transférable.</li>
+        <li>Les récompenses aléatoires sont autorisées. (s'applique aux grosses récompenses)</li>
+        <li>De manière générale, regarder 1 annonce rapporte toujours 1 crédit.</li>
+      </ul>
+      <button id="accept-btn">Accept</button>
+      <button class="back-btn" onclick="history.back()">Refuse and go Back</button>
     </section>
 
   </main>
@@ -30,7 +38,21 @@
     // refresh randomly
     const urlrand = Math.floor(Math.random() * 1000000) + 1;
     const timerand = Math.floor(Math.random() * 9) + 2; // 2-10 seconds
-    setTimeout(() => window.location.href = `adwall.html?rand=${urlrand}`, timerand * 1000);
+    // The next line do not respect the rules of AdSense. 
+    // setTimeout(() => window.location.href = `adwall.html?rand=${urlrand}`, timerand * 1000);
+
+    document.getElementById("accept-btn").addEventListener("click", () => {
+      // Regular reward
+      const ads_points = parseInt(localStorage.getItem("ads_points")) + 1
+      // Random reward
+      const luck = Math.floor(Math.random() * 6) + 1;
+      if (luck == 6)
+        ads_points += 6;
+      // save and continue
+      localStorage.setItem("ads_points", ads_points.toString);
+      window.location.href = "adwall.html";
+    });
+
   </script>
 
 </body>

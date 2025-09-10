@@ -273,7 +273,7 @@
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });*/
-      localStorage.removeItem("auth_token");
+      localStorage.clear();
       alert('Account deleted.');
       document.getElementById("message").textContent = "Account deleted.";
       setTimeout(() => window.location.href = "signup.html", 2000);

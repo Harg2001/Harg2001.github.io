@@ -25,9 +25,17 @@
       <input type="password" id="password" name="password" required />
 
       <button type="submit">Sign in</button>
+      <!-- TODO add an explanation regarding cookie expiration (if meaningfull) -->
     </form>
     <p>No account ? <a href="signup.html">Create an account</a></p>
     <p id="message"></p>
+
+    <p style="font-size: small;"><i>
+      When you sign in, the system checks your input against the stored (hashed) data to verify your identity.
+      After successful login, the server generates an authentication token stored in a cookie on your local device. 
+      It's sent automatically with each request, allowing the server to recognize the user without asking them to log in again.
+      The token expire after a set time or is invalidated on logout.
+    </i></p>
   </main>
   
   <div id="footer-placeholder"></div>

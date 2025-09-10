@@ -69,9 +69,56 @@ p {
   color: #ccc;
 }
 
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
   </style>
 </head>
+
 <body>
+
  <script>
     const token = localStorage.getItem("auth_token");
 	// Simuler récupération avec un token
@@ -95,6 +142,7 @@ p {
       <p>Address : <span id="user-address"></span></p>
     </div>
 
+    <h2>My purchases</h2>
     <table>
       <tr>
         <th>Items</th>
@@ -156,14 +204,46 @@ p {
       </tr>
     </table>
     
-    <div id="consent-info">
-      <button id="newsletter-optout-btn">Communication opt-out</button>
-    </div>
+    <h2>Options</h2>
+    <div id="newsletter-info">
+      Communication email :
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggleButton">
+        <span class="slider"></span>
+      </label>
 
-    <button id="logout-btn">Log out</button>
-    <button id="delete-btn">Delete my account</button>
-    <!-- TODO add an explanation regarding GDPR and the deletion will be immediate and no-recoverable. -->
-    <!-- TODO add an explanation regarding cookie expiration (if meaningfull) -->
+      <p style="font-size: small;"><i>
+      When you opt out, you stop receiving promotional, marketing or update emails. Transactional email (like a order confirmation) cannot be opted out.
+      You improve your digital footprint and privacy, but you might miss out on product launches, discounts, or important service changes.
+      This website shows transparency and care about user trust. We prefer to reduces spam complaints and improves sender reputation, which helps future emails reach the engaged users.
+      We use this also as a feedback opportunity, high opt-out rates can signal poor targeting or irrelevant content, prompting strategy improvements.
+    </i></p>
+    </div>
+    </br>
+
+    <div id="delete-info">
+      <button id="delete-btn">Delete my account</button>
+      <p style="font-size: small;"><i>
+      When you delete your account, You can no longer log in or use any services tied to that account. 
+      All personalized settings, saved content, and history are erased. Except certain information for legal or operational reasons (e.g. billing records or security logs)
+      Active subscriptions are canceled. You won’t be charged going forward.
+      You'll reduce your digital footprint and help prevent identity theft.
+      There is no grace period, the deletion will be immediate and non-reversable. Always back up important data before pulling the plug.
+    </i></p>
+    </div>
+    </br>
+
+    <div id="logout-info">
+      <button id="logout-btn">Log out</button>
+      <p style="font-size: small;"><i>
+      When you log out, your active session ends, meaning you must re-authenticate to access protected areas again.
+      The authentication token stored in a cookie is deleted. This prevents the browser from sending valid credentials with future requests.
+      Logging out helps prevent session hijacking—especially on shared or public devices. It ensures that even if someone accesses the browser afterward, they can't impersonate the user.
+      A logout also invalidates the session on the server. This prevent re-use of stolen tokens.
+    </i></p>
+    </div>
+    </br>
+    
     <p id="message"></p>
   </main>
 
@@ -179,9 +259,12 @@ p {
       document.getElementById("user-email").textContent = user.email;*/
     }
 
-    document.getElementById("logout-btn").addEventListener("click", () => {
-      localStorage.removeItem("auth_token");
-      window.location.href = "signin.html";
+    document.getElementById('toggleButton').addEventListener('change', function () {
+      if (this.checked) {
+        alert('Communication enabled.');
+      } else {
+        alert('Communication disabled.');
+      }
     });
 
     document.getElementById("delete-btn").addEventListener("click", async () => {
@@ -196,6 +279,11 @@ p {
       alert('Account deleted.');
       document.getElementById("message").textContent = "Account deleted.";
       setTimeout(() => window.location.href = "signup.html", 2000);
+    });
+
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("auth_token");
+      window.location.href = "signin.html";
     });
 
     fetchAccount();

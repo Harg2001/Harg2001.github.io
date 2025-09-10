@@ -13,106 +13,104 @@
   <script src="../common/autofetch.js"></script>
   <style>
 
-.table_image_thumbnail {
-  height: 69px;
-  width: 184px;
-  display: block;
-}
+    .table_image_thumbnail {
+      height: 69px;
+      width: 184px;
+      display: block;
+    }
 
-.table__column--width-medium {
-  align-items: center;
-  font-family: monospace;
-  color: #e0e0e0;
-}
+    .table__column--width-medium {
+      align-items: center;
+      font-family: monospace;
+      color: #e0e0e0;
+    }
 
-.table__column__heading {
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-}
+    .table__column__heading {
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+    }
 
-.table__column__heading:hover {
-  text-decoration: underline;
-}
+    .table__column__heading:hover {
+      text-decoration: underline;
+    }
 
-.table__column__key {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.95em;
-}
+    .table__column__key {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95em;
+    }
 
-.icon_to_clipboard {
-  color: #ffd700;
-  cursor: pointer;
-}
+    .icon_to_clipboard {
+      color: #ffd700;
+      cursor: pointer;
+    }
 
-.key_redeem {
-  background-color: #5c2e91;
-  color: white;
-  border-radius: 4px;
-  padding: 4px 10px;
-  text-decoration: none;
-  font-size: 0.85em;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+    .key_redeem {
+      background-color: #5c2e91;
+      color: white;
+      border-radius: 4px;
+      padding: 4px 10px;
+      text-decoration: none;
+      font-size: 0.85em;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
-.key_redeem:hover {
-  background-color: #7349b8;
-}
+    .key_redeem:hover {
+      background-color: #7349b8;
+    }
 
-p {
-  margin: 2px 0;
-  font-size: 0.9em;
-  color: #ccc;
-}
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
 
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      background-color: #ccc;
+      border-radius: 34px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: 0.4s;
+    }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  background-color: #ccc;
-  border-radius: 34px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.4s;
-}
+    .slider::before {
+      content: "";
+      position: absolute;
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
 
-.slider::before {
-  content: "";
-  position: absolute;
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  border-radius: 50%;
-  transition: 0.4s;
-}
+    input:checked + .slider {
+      background-color: #4CAF50;
+    }
 
-input:checked + .slider {
-  background-color: #4CAF50;
-}
+    input:checked + .slider::before {
+      transform: translateX(26px);
+    }
 
-input:checked + .slider::before {
-  transform: translateX(26px);
-}
+    p {
+      margin: 1em;
+    }
 
   </style>
 </head>
@@ -121,8 +119,6 @@ input:checked + .slider::before {
 
  <script>
     const token = localStorage.getItem("auth_token");
-	// Simuler récupération avec un token
-	// token = 123
     if (!token) {
       window.location.href = "signin.html";
     }
@@ -142,6 +138,7 @@ input:checked + .slider::before {
       <p>Address : <span id="user-address"></span></p>
     </div>
 
+    <!-- TODO add copy to clipboard function -->
     <h2>My purchases</h2>
     <table>
       <tr>
@@ -166,7 +163,7 @@ input:checked + .slider::before {
         <td class="table__column--width-medium text-center">
           <div class="table__column__key">
             <i data-clipboard-text="RQFVL-Y4LQE-HDRGG" class="icon_to_clipboard fa fa-fw fa-copy"></i>
-            <span>RQFVL-Y4LQE-HDRGG</span>
+            <span class="blur unblur">RQFVL-Y4LQE-HDRGG</span>
             <a rel="nofollow noopener" target="_blank"
             href="https://store.steampowered.com/account/registerkey?key=RQFVL-Y4LQE-HDRGG"
             class="key_redeem">
@@ -193,7 +190,7 @@ input:checked + .slider::before {
         <td class="table__column--width-medium text-center">
           <div class="table__column__key">
             <i data-clipboard-text="IL227-R4KQP-FQA0R" class="icon_to_clipboard fa fa-fw fa-copy"></i>
-            <span>IL227-R4KQP-FQA0R</span>
+            <span class="blur unblur">IL227-R4KQP-FQA0R</span>
             <a rel="nofollow noopener" target="_blank"
             href="https://store.steampowered.com/account/registerkey?key=IL227-R4KQP-FQA0R"
             class="key_redeem">
@@ -213,7 +210,7 @@ input:checked + .slider::before {
       </label>
 
       <p style="font-size: small;"><i>
-      When you opt out, you stop receiving promotional, marketing or update emails. Transactional email (like a order confirmation) cannot be opted out.
+      When you opt out, you stop receiving promotional, marketing or update emails. Transactional email (like an order confirmation) cannot be opted out.
       You improve your digital footprint and privacy, but you might miss out on product launches, discounts, or important service changes.
       This website shows transparency and care about user trust. We prefer to reduces spam complaints and improves sender reputation, which helps future emails reach the engaged users.
       We use this also as a feedback opportunity, high opt-out rates can signal poor targeting or irrelevant content, prompting strategy improvements.

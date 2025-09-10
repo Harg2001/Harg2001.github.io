@@ -206,8 +206,12 @@ share-actions li {
   display: inline-block;
 }
 
-span#blur {
+.blur {
   filter: blur(3px);
+}
+
+.unblur:hover {
+  filter: blur(0px);
 }
 
 span#face {

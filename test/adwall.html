@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ads wall</title>
+  <link rel="icon" type="image/png" href="../common/favicon.png" />
+  <link rel="stylesheet" href="../common/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="../common/autofetch.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3948786720141408" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <div id="navigation-placeholder"></div>
+
+  <main>
+    <section>
+      <h2>Ads wall</h2>
+      Test ads here.
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // refresh randomly
+    const urlrand = Math.floor(Math.random() * 1000000) + 1;
+    const timerand = Math.floor(Math.random() * 9) + 2; // 2-10 seconds
+    setTimeout(() => window.location.href = `adwall.html?rand=${urlrand}`, timerand * 1000);
+  </script>
+
+</body>
+</html>

@@ -41,6 +41,12 @@
   <div id="footer-placeholder"></div>
 
   <script>
+
+    function isValidEmail(email) {
+      const regex = /^(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*|"[^"\r\n]+")@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
+      return regex.test(email);
+    }
+
     function isStrongPassword(password) {
       const minLength = 8;
       const hasUpperCase = /[A-Z]/.test(password);
@@ -59,11 +65,19 @@
       const email = e.target.email.value;
       const password = e.target.password.value;
 
-      if (isStrongPassword(password))
-        // TODO check again the StrongPassword on backend side.
-        alert('Thanks for signup. This feature is not yet completed.');
-      else
+      // TODO copy validation on backend side.
+      if(!isValidEmail(email)) {
+        alert('Invalid email address.')
+        return;
+      }
+
+      // TODO copy validation on backend side.
+      if (!isStrongPassword(password)) {
         alert('Weak password. Please ensure 8+ characters, upper and lower case and digit.');
+        return;
+      }
+
+      alert('Thanks for signup. This feature is not yet completed.');  
 
       // TODO backend ou webhook Make/Zapier
       /*const response = await fetch("https://ton-api.com/signup", {

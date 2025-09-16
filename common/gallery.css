@@ -12,7 +12,6 @@
 
     .carousel .item, .grid .item {
       position: relative;
-      border: 1px solid #555;
       overflow: hidden;
       border-radius: 10px;
       transition: transform 0.3s;

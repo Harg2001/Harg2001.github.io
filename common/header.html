@@ -29,23 +29,6 @@
     </div>
   </div>
 
-  <script>
-    const overlay = document.querySelector(".overlay");
-
-    document.addEventListener("mousemove", (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
-
-      overlay.style.background = `
-        radial-gradient(
-          circle 300px at ${x}px ${y}px,
-          transparent -100%,
-          rgba(0, 0, 0, 0.9) 100%
-        )
-      `;
-    });
-  </script>
-
 <header class="site-banner">
   <h1>👾 Harg - Indie Game Developer <span id="face">-</span></h1>
   <p>Hi! I'm Jeremy Harris, a solo dev from Belgium making an action RPG with Godot.</p>

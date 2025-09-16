@@ -203,6 +203,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Now that the footer is loaded, find the 'share-actions' element and update it
         customElements.define("share-actions", ShareActions);
       }
+
+      const overlay = el.querySelector(".overlay");
+      if(overlay) {
+        document.addEventListener("mousemove", (e) => {
+          const x = e.clientX;
+          const y = e.clientY;
+
+          overlay.style.background = `
+            radial-gradient(
+              circle 300px at ${x}px ${y}px,
+              transparent -100%,
+              rgba(0, 0, 0, 0.9) 100%
+            )
+          `;
+        });
+      }
     
       })
       .catch(err => {

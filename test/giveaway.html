@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test page</title>
+  <link rel="icon" type="image/png" href="../common/favicon.png" />
+  <link rel="stylesheet" href="../common/styles.css" />
+  <link rel="stylesheet" href="../common/card.css" />
+  <link rel="stylesheet" href="../common/chess.css" />
+  <link rel="stylesheet" href="../common/dice.css" />
+  <link rel="stylesheet" href="../common/countdown.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="../common/autofetch.js" defer></script>
+  <script src="../common/card.js" defer></script>
+  <script src="../common/dice.js" defer></script>
+  <script src="../common/countdown.js" defer></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <div id="navigation-placeholder"></div>
+
+  <main>
+    <h2>Giveaway</h2>
+    <form id="giveaway-form">
+      <label for="code">Code</label>
+      <input type="text" id="code" name="code" pattern="^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" required/>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div>
+      <h4>your entries :</h4>
+      <table id="solid">
+        <thead>
+          <tr>
+            <th>Codes</th>
+            <th>Dates</th>
+          </tr>
+        </thead>
+        <tbody id="entries">
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+
+    show_entries();
+
+    function show_entries() {
+      var codes = JSON.parse(localStorage.getItem("codes")); // Array
+      if(!codes)
+        codes = [];
+
+      var entries = document.getElementById('entries')
+      entries.innerHTML = '';
+      codes.forEach(function(rowData) {
+        var row = document.createElement('tr');
+        var col1 = document.createElement('td');
+        col1.appendChild(document.createTextNode(rowData.code))
+        var col2 = document.createElement('td');
+        col2.appendChild(document.createTextNode(new Date(rowData.date).toLocaleDateString("en-BE")))
+        row.appendChild(col1)
+        row.appendChild(col2)
+        entries.appendChild(row);
+      });
+    }
+
+    document.getElementById('giveaway-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const code = e.target.code.value; // ex : c75f7c66-e858-47d6-bb82-7ea5547c800c
+      const date = new Date();
+      
+      const rowData = Object.create(null);
+      rowData.code = code;
+      rowData.date = date;
+      
+      // TODO backend
+      /*const response = await fetch("https://ton-api.com/giveaway", {
+        method: "POST",
+        body: JSON.stringify({ code }),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      const result = await response.json();
+      if (result.token) {
+        localStorage.setItem("code", result.token);
+        window.location.href = "account.html";
+      } else {
+        document.getElementById("message").textContent = result.message || "Connection failed.";
+      }*/
+
+      var codes = JSON.parse(localStorage.getItem("codes")); // Array
+      if(!codes)
+        codes = [];
+
+      if(!codes.includes(rowData)) {
+        codes.push(rowData)
+        localStorage.setItem("codes", JSON.stringify(codes));
+        alert('Congrats for your entry and good luck. This feature is not yet completed.');
+        show_entries();
+      } else {
+        alert('Code already used.');
+      }
+
+    });
+  </script>
+
+</body>
+</html>

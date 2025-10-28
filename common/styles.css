@@ -236,3 +236,18 @@ span#face {
   color: rgba(0, 0, 0, 0.1);
   font-size: 0.1pt;
 }
+
+table#solid {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+table#solid th, td {
+  border: 1px solid gray;
+  padding: 10px;
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+table#solid tr:nth-child(odd) td {
+  background-color: rgba(180, 180, 180, 0.5);
+}

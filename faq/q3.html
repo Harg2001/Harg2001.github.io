@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q ...</title>
+  <link rel="icon" type="image/png" href="../common/favicon.png" />
+  <link rel="stylesheet" href="../common/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="../common/autofetch.js"></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <div id="navigation-placeholder"></div>
+  
+  <main>
+	  <h1>FAQ</h1>
+	   
+	  <h2>Save Game - location, backup, installation</h2>
+	  <p>Where can I find the save file on PC, which folder to use for backup, and how to install or replace it with another save? In this guide I'll show you the exact save game locations and explain how to swap them for a 100% completed save or make your own backup.<br></p>
+
+    <h2>How to find save game files</h2>
+    <p>The save game files can be stored in several different folders on your PC. Some of these folders are hidden by default, while others are easier to access. Below you will find all the common save game locations for this game, along with step-by-step instructions to reach them.</p>
+	  
+    <h3>LocalLow folder:</h3>
+    <div class="terminal">
+      <ul>
+          <li>Enter in the folder address bar: <b>C:/Users/%USERPROFILE%/AppData/LocalLow/%GAME%/SaveGames</b></li>
+          <li>Press <b>Win + R</b>, type <b>%appdata%</b>, go back to the AppData folder, then open: LocalLow → Game folder → SaveGames</li>
+          <li>In the system search bar, type <b>%appdata%</b>, go back to the AppData folder, then open: LocalLow → Game folder → SaveGames</li>
+      </ul>
+    </div>
+
+    <h3>Local folder:</h3>
+    <div class="terminal">
+      <ul>
+          <li>Enter in the folder address bar: <b>C:/Users/%USERPROFILE%/AppData/Local/%GAME%/SaveGames</b></li>
+          <li>Press <b>Win + R</b>, type <b>%appdata%</b>, go back to the AppData folder, then open: Local → Game folder → SaveGames</li>
+          <li>In the system search bar, type <b>%appdata%</b>, go back to the AppData folder, then open: Local → Game folder → SaveGames</li>
+      </ul>
+    </div>
+
+    <h3>Roaming folder:</h3>
+    <div class="terminal">
+      <ul>
+          <li>Enter in the folder address bar: <b>C:/Users/%USERPROFILE%/AppData/Roaming/%GAME%/SaveGames</b></li>
+          <li>Press <b>Win + R</b>, type <b>%appdata%</b>, then open: Roaming → Game folder → SaveGames</li>
+          <li>In the system search bar, type <b>%appdata%</b>, then open: Roaming → Game folder → SaveGames</li>
+      </ul>
+    </div>
+
+    <h3>Steam folder:</h3>
+    <div class="terminal">
+      <ul>
+          <li>[Steam installation path]/userdata/<i>Your Steam Account ID</i>/<i>%GAMEID%</i></li>
+          <li>With the default Steam installation path: <b>C:/Program Files (x86)/Steam/userdata/<i>Your Steam Account ID</i>/<i>%GAMEID%</i></b></li>
+      </ul>
+    </div>
+
+    <h3>Documents folder:</h3>
+    <div class="terminal">
+      <ul>
+          <li>%USERPROFILE%/Documents/%GAME%</li>
+          <li>Full path example: <b>C:/Users/%USERPROFILE%/Documents/%GAME%</b></li>
+      </ul>
+    </div>
+
+    <p>If you cannot find the save game in the locations above, try looking for a folder with the developer <strong>Harg</strong> before the game name.</p>
+
+    <h2>What to know before backing up your save files</h2>
+    <p>Backing up your save files is a good habit to protect your progress, but there are a few things to keep in mind before you start. First, always make sure the game is completely closed before copying or replacing any save files. Open files might cause data corruption or incomplete backups.</p>
+    <p>Also, be aware that some games use cloud saves or encrypted save formats. This means that simply copying the files might not always work or the game could overwrite your backup with the cloud version. Check if the game uses cloud saves and consider temporarily disabling it if you want to manage your backups manually.</p>
+    <p>Finally, keep your backups organized and name them clearly with dates or progress details. This way, you'll know exactly which backup to restore if something goes wrong.</p>
+
+    <h2>Frequently Asked Questions (FAQ) about save files</h2>
+
+    <h3>Where are my save files located?</h3>
+    <p>The save files are usually stored in folders like LocalLow, Local, Roaming, or inside your Steam userdata folder. This guide shows you all the common locations and how to access them.</p>
+
+    <h3>Can I replace my save files with ones downloaded from the internet?</h3>
+    <p>Yes, you can replace your save files, but make sure the game is closed before you do so. Also, check if the save file is compatible with your game version to avoid errors or crashes.</p>
+
+    <h3>How do I make a backup of my save files?</h3>
+    <p>Simply copy the entire save folder to a safe location, like another folder on your PC or an external drive. Make backups regularly, especially before making major changes or installing mods.</p>
+
+    <h3>What if my save files are synced with the cloud?</h3>
+    <p>Cloud synchronization can overwrite your local saves. If you want to manually manage backups, you may need to temporarily disable cloud saves through your game launcher or platform settings.</p>
+
+    <h3>Can I use backups to transfer saves between different PCs?</h3>
+    <p>Yes, as long as the game versions match, you can copy your save files to another computer and continue playing from where you left off.</p>
+
+    <h3>My backup doesn't work, what should I do?</h3>
+    <p>Make sure you copied the files correctly and placed them in the exact folder the game expects. Also, verify the backup matches your game version. Sometimes, mods or updates can change the save format.</p>
+
+	  <p>If you still have problem running the game, please create a new request.</p>
+
+	  <div class="buttons">
+		<button class="home-btn" onclick="window.location.href='index.html'">Go to Home</button>
+		<button class="back-btn" onclick="history.back()">Go Back</button>
+	  </div>
+  </main>
+
+  <div class="tags">
+    Tags: 
+    save, 
+    save game, 
+    save game location, 
+    100% save game, 
+    backup, 
+    installation.
+  </div>
+  
+  <div id="footer-placeholder"></div>
+</body>
+</html>

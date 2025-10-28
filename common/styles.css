@@ -217,3 +217,22 @@ share-actions li {
 span#face {
   font-family: arial;
 }
+
+.terminal {
+  background-color: #101010;
+  color: #33ff00;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: monospace, monospace;
+}
+
+.terminal ul {
+  list-style-type: ">_ ";
+}
+
+.tags {
+  color: #000; /* Fallback for older browsers */
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 0.1pt;
+}

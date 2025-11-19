@@ -231,6 +231,16 @@ span#face {
   list-style-type: ">_ ";
 }
 
+/* Curseur clignotant */
+.cursor {
+  animation: blink 0.7s steps(1) infinite;
+}
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .tags {
   color: #000; /* Fallback for older browsers */
   color: rgba(0, 0, 0, 0.1);

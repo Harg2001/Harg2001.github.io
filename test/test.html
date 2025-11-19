@@ -17,6 +17,7 @@
   <script src="../common/card.js" defer></script>
   <script src="../common/dice.js" defer></script>
   <script src="../common/countdown.js" defer></script>
+  <script src="../common/cursor.js" defer></script>
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -27,7 +28,8 @@
       <h2>Test section</h2>
       <p>I use this page to test HTML components</p>
       <p>(╯°Д°)╯︵ ן uʍop-ǝpı̣sdn pɐǝɹ uɐɔ noʎ ǝǝs ı̣ ɥo</p>
-	  <p><span class="blur unblur">I like to hide</span> <span class="blur">secrets</span></p>
+      <p><span class="blur unblur">I like to hide</span> <span class="blur">secrets</span></p>
+      <p id="typewriter"></p>
     </section>
 	
 	<div id="card-placeholder"></div>
@@ -38,6 +40,21 @@
   </main>
 
   <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    initWord(
+      [
+        "Hello",
+        "World",
+        ":)"
+      ], 
+      document.getElementById("typewriter")
+      );
+
+    });
+  </script>
 
 </body>
 </html>

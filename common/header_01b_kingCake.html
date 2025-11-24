@@ -1,0 +1,36 @@
+<div id="background" style="position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1; /* Passe derrière le reste */
+  overflow: hidden;">
+    <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute;top: 0;width: 100%;height: 100%;">
+        <defs>
+          <pattern id="background-0.2777004253762284" width="605" height="470" patternUnits="userSpaceOnUse" viewBox="1 3 608 472">
+            <path fill="var(--color-svg, white)" fill-rule="evenodd" d="TODO" clip-rule="evenodd">
+              <!-- souhaiter la bonne année, souvent avec des visuels festifs et des messages de renouveau. -->
+            </path>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#background-0.2777004253762284)">
+        </rect>
+      </svg>
+
+    <div class="overlay" style="position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: radial-gradient(
+          circle 300px at center,
+          transparent -100%,
+          rgba(0, 0, 0, 0.99) 100%
+        );
+        transition: background 0.1s linear;">
+    </div>
+  </div>
+
+<header class="site-banner">
+  <h1>👾 Harg - Indie Game Developer <span id="face">-</span></h1>
+  <p>Hi! I'm Jeremy Harris, a solo dev from Belgium making an action RPG with Godot.</p>
+</header>

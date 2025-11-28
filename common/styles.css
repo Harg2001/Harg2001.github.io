@@ -94,9 +94,32 @@ a:hover {
 img {
   max-width: 100%;
   height: auto;
+}
+
+img:border {
+  max-width: 100%;
+  height: auto;
   margin: 1rem;
   /*border: 1px solid #333;*/
   border-radius: 4px;
+}
+
+.alt-img {
+  width: 230px;
+  height: auto;
+  margin: 10px;
+}
+
+/* Les images paires à gauche */
+p:nth-of-type(even) .alt-img {
+  float: left;
+  margin-right: 20px;
+}
+
+/* Les images impaires à droite */
+p:nth-of-type(odd) .alt-img {
+  float: right;
+  margin-left: 20px;
 }
 
 button {

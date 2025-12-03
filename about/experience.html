@@ -6,6 +6,12 @@
   <link rel="icon" type="image/png" href="../common/favicon.png" />
   <link rel="stylesheet" href="../common/styles.css">
   <link rel="stylesheet" href="../common/gallery.css">
+  <style>
+	.item img {
+	width: 100px;
+	height: 100px;
+	}
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   <script src="../common/autofetch.js"></script>
@@ -108,6 +114,12 @@
     <div class="grid">
 	  <a href="#">
 		  <div class="item">
+			<img src="https://res.cloudinary.com/db1mkizr6/image/upload/v1755447337/Windows_logo_-_2012.svg_q4vvc7.png" alt="Windows">
+			<div class="hover-details">Windows</div>
+		  </div>
+	  </a>
+	  <a href="#">
+		  <div class="item">
 			<img src="https://res.cloudinary.com/db1mkizr6/image/upload/v1755446994/Tux.svg_gwl4go.png" alt="Linux">
 			<div class="hover-details">Linux</div>
 		  </div>
@@ -118,12 +130,8 @@
 			<div class="hover-details">MacOS</div>
 		  </div>
 	  </a>
-	  <a href="#">
-		  <div class="item">
-			<img src="https://res.cloudinary.com/db1mkizr6/image/upload/v1755447337/Windows_logo_-_2012.svg_q4vvc7.png" alt="Windows">
-			<div class="hover-details">Windows</div>
-		  </div>
-	  </a>
+    </div>
+	<div class="grid">
 	  <a href="#">
 		  <div class="item">
 			<img src="https://res.cloudinary.com/db1mkizr6/image/upload/v1755446865/Steam_icon_logo.svg_x7u5ce.png" alt="Steam">
@@ -143,6 +151,10 @@
 		  </div>
 	  </a>
 	  <!-- Répéter -->
+	  <div class="item">
+		<br>
+		<p>List to be extended..</p>
+	  </div>
     </div>
 	<h3>Web</h3>
 	  <div class="grid">
@@ -171,6 +183,10 @@
 		  </div>
 	  </a>-->
 	  <!-- Répéter -->
+	  <div class="item">
+		<br>
+		<p>List to be extended..</p>
+	  </div>
     </div>
 	<h3>Mobile</h3>
 	<div class="grid">
@@ -188,8 +204,11 @@
 	  </a>
       <!-- Répéter -->
     </div>
-	<!--
 	<h3>Game console</h3>
+	<div class="item">
+		<p>Nope, not for now.</p>
+	</div>
+	<!--
 	  <div class="grid">
 	  <a href="#">
 		  <div class="item">
@@ -221,7 +240,7 @@
   <script>
     $(document).ready(function(){
       $('.carousel').slick({
-        slidesToShow: 3,
+        slidesToShow: 6,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -231,13 +250,19 @@
 		{
 			breakpoint: 900,
 			settings: {
-				slidesToShow: 2
+				slidesToShow: 4
+			}
+		},
+		{
+			breakpoint: 750,
+			settings: {
+				slidesToShow: 5
 			}
 		},
 		{
 			breakpoint: 600,
 			settings: {
-				slidesToShow: 1
+				slidesToShow: 3
 			}
 		}]
       });

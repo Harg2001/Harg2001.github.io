@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Inter',sans-serif;
+        }
+
+        body{
+        background:#f8f9fc;
+        color:#1a1a1a;
+        line-height:1.6;
+        }
+
+        .container{
+        max-width:1100px;
+        margin:auto;
+        padding:40px 20px;
+        }
+
+        h1{
+        font-size:40px;
+        margin-bottom:20px;
+        }
+
+        h2{
+        font-size:32px;
+        margin-bottom:30px;
+        text-align:left;
+        }
+
+        p{
+        color:#444;
+        margin-bottom:20px;
+        }
+
+        .hero{
+        background:linear-gradient(135deg,#4f46e5,#6366f1);
+        color:white;
+        text-align:center;
+        padding:80px 20px;
+        }
+
+        .hero p{
+        color:#e0e7ff;
+        }
+
+        .profile{
+        display:flex;
+        align-items:center;
+        gap:40px;
+        }
+
+        .profile img{
+        width:300px;
+        border-radius:12px;
+        }
+
+        .linkedin{
+        display:inline-block;
+        margin-top:10px;
+        color:#4f46e5;
+        font-weight:600;
+        text-decoration:none;
+        }
+
+        .stats{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+        gap:30px;
+        text-align:center;
+        }
+
+        .stat{
+        background:white;
+        padding:30px;
+        border-radius:12px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .stat h3{
+        font-size:36px;
+        color:#4f46e5;
+        }
+
+        .hidden{
+        display:none;
+        }
+
+        .testimonials{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+        gap:30px;
+        }
+
+        .testimonial{
+        background:white;
+        padding:25px;
+        border-radius:12px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .testimonial strong{
+        display:block;
+        margin-top:10px;
+        }
+
+        .logos{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+        gap:40px;
+        align-items:center;
+        }
+
+        .logos img{
+        max-width:120px;
+        margin:auto;
+        display:block;
+        filter:grayscale(100%);
+        opacity:0.8;
+        }
+
+        .transparency{
+        background:#eef2ff;
+        padding:60px 20px;
+        text-align:center;
+        }
+
+        .btn_section{
+        text-align:center;
+        padding:30px;
+        }
+
+        .btn{
+        display:inline-block;
+        padding:14px 28px;
+        background:#4f46e5;
+        color:white;
+        text-decoration:none;
+        border-radius:8px;
+        font-weight:600;
+        }
+
+        .btn:hover {
+        background-color: #3730a3;
+        }
+
+        .footer{
+        background:#111827;
+        color:white;
+        text-align:center;
+        padding:30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>About the developper</h1>
+        <p>Usual bullshit (except it's not) to explain that i'm not a scam. Feel free to double check and validate everything.</p>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="container">
+        <div class="profile">
+            <img src="https://res.cloudinary.com/db1mkizr6/image/upload/v1772795487/Jeremy_Harris_sss5rn.jpg" alt="Professional photo">
+            <div>
+                <h2>Who I Am</h2>
+                <p>I'm Jérémy Harris and I got over 10 years of experience in marketing automation and digital campaigns.
+                During my career I have worked on large-scale email campaigns, audience targeting
+                and marketing systems designed to reach highly specific communities.</p>
+                <p>My goal is simple: 
+                help independent game studios reach a decent visibility boost 
+                without requiring a large marketing budget.</p>
+                <a class="linkedin" href="https://www.linkedin.com/in/harg2001/" target="_blank">View my LinkedIn profile</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIGURES -->
+    <section class="container">
+        <h2>Key Figures</h2>
+        <div class="stats">
+            <div class="stat">
+                <h3>10+</h3>
+                <p>Years of experience</p>
+            </div>
+
+            <div class="stat">
+                <h3>120+</h3>
+                <p>Projects completed</p>
+            </div>
+
+            <div class="stat">
+                <h3>60+</h3>
+                <p>Customers satisfied</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="container">
+        <h2>Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial hidden">Hello, Juste un petit message pour vous dire que ça marche NICKEL ! Merci beaucoup. JP<br><strong>Jean-Philippe G.</strong></div>
+            <div class="testimonial hidden">Top ça !!! Bravo à l'équipe ! Beau boulot ☺<br><strong>Fred B.</strong></div>
+            <div class="testimonial hidden">Merci Jérém !! J'apprécie ! Bonne fin de soirée<br><strong>Justine M.</strong></div>
+            <div class="testimonial hidden">Jérémy, C'est plus clair merci pour l'explication. Justine<br><strong>Justine M.</strong></div>
+            <div class="testimonial hidden">Top merci ! Bien à toi, Agathe<br><strong>Agathe P.</strong></div>
+            <div class="testimonial hidden">yop merci pour l'upgrade merci<br><strong>Marc L.</strong></div>
+            <div class="testimonial hidden">Ah ok top merci ! 😊<br><strong>Marine K.</strong></div>
+            <div class="testimonial">Jérémy, C'est une excellente nouvelle ! Encore merci pour votre implication dans le projet. Belle journée 😊<br><strong>Nhu V.</strong></div>
+            <div class="testimonial hidden">Merci Jérémy ! 😊<br><strong>Nhu V.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Un grand merci pour ton retour ! Bàv, Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Merci Jeremy, effectivement ai reçu un paquet de tests... Merci Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Un grand merci à vous pour ce retour très précis. Je vais corriger cela. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Un grand merci pour ton aide ! Bàt Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Hello Jérémy, Merci pour ce retour rapide. J'ai été en contact avec xxx, qui me dit qu'apparemment tout est ok de votre coté, le problème serait bien chez yyy. Je reviens vers vous si nécessaire, merci ! Bàv, Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Quelle réponse complète 😊 !!! Je lit tout ça, merci Jérém !<br><strong>Manon K.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour ton action. Je vais faire les modifications nécessaires pour corriger celà à la source. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour la précieuse information. Correction mise en place. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci pour le feedback. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Ok merci Jérémy. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci pour l'info. Je vais essayer cela. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci ! Oui c'est normal, nous sommes en période de fermeture annuelle donc les transactions sont au points morts. Réouverture ce vendredi 16 😊 Bàt Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour ta réponse ! Je te souhaite déjà un très bon week-end. Bàt, Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">C'est noté, merci pour cette précision.<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Merci pour votre rapidité !<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Merci Jérémy. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Ok, merci. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial">Bonjour Jéméry, nous ne recevons plus non plus l'erreur de ce matin. Merci pour ton follow-up :-) Bien à toi,<br><strong>Benjamin T.</strong></div>
+            <div class="testimonial hidden">Merci à tous pour le suivi ! Belle après-midi à tous !<br><strong>Manon K.</strong></div>
+            <div class="testimonial hidden">Rebonjour, Merci pour votre suivi !<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Merci Jérémy ! Bàv Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour ton retour ! Bàt, Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci ! Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour ton retour. J'ai fais le nécessaire pour que les 25K records soient dans la livraison de demain. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci Jérémy ! Bon WE. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, OK merci. By the way, l'erreur a été corrigée pour les prochaines livraisons. Bonne journée<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci pour ta réactivité Jerem 😊<br><strong>Manon K.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Suite à notre entretien du jour (encore désolé de t'avoir dérangé un jour off), ci-joint le fichier xxx. Pour ma part, pas de modification à votre code, j'attends que le problème soit fixé au niveau de notre code et ferai une reprise de données une fois la modification effectuée.<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci pour ton retour.<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial">Merci pour ton retour (tardif... :) (et je fais référence à l'heure, pas au délai), je comprends encore mieux ton niveau d'occupation...) Je vois ton mail concernant le chargement de la nuit. A très bientôt, Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Nickel, le doc est adapté et comme discuté au tel on revient vers toi pour s'aligner sur les champs. Bon WE !!!<br><strong>Quentin P.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci d'avoir vérifié ! Bàv, Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Rebonjour Jérémy, Merci pour l'ajout de l'index sur le champs et les informations complémentaires ! Merci ! Bàt Charlotte<br><strong>Charlotte H.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour ton retour. Nous sommes donc bien alignés sur les éléments que tu m'avais communiqués. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Top, merci. Stéphane<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci Jérémy pour cet input détaillé. Je viens de faire qques tests avec mes crédentials.<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci Jérémy, Cela fonctionne effectivement bcp mieux.<br><strong>Stéphane D.</strong></div>
+            <div class="testimonial hidden">Merci bcp Jérémy! 😊<br><strong>Laurane C.</strong></div>
+            <div class="testimonial">Youhouuuu 🎉 Merci pour ce retour positif 😊<br><strong>Océane J.</strong></div>
+            <div class="testimonial hidden">Thanks 😉<br><strong>Alain C.</strong></div>
+            <div class="testimonial">C'est une excellente nouvelle !!! Merci Jérém ! Tiens moi au courant dès que c'est confirmé. Ce sera une excellente nouvelle pour ma réunion de jeudi prochain ☺<br><strong>Frédéric B.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour l'info.<br><strong>Océane J.</strong></div>
+            <div class="testimonial hidden">Bonjour monsieur Harris, Je vous remercie pour votre intervention. Cordialement,<br><strong>Christophe B.</strong></div>
+            <div class="testimonial hidden">Top merci pour ton retour Jérémy 😊<br><strong>Sophie M.</strong></div>
+            <div class="testimonial hidden">Hello ! Je transmets les infos au client merci 😊<br><strong>Sophie M.</strong></div>
+            <div class="testimonial">Bonjour, Merci pour vos différents conseils précieux, vous commencez à être expert en la matière... Merci par avance pour vos éclaircissements.<br><strong>Alexandre M.</strong></div>
+            <div class="testimonial">Excellent email. Merci<br><strong>Fred B.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour ce retour. Cordialement<br><strong>Catherine D.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci beaucoup pour votre e-mail. Céline<br><strong>Céline A.</strong></div>
+            <div class="testimonial hidden">Top merci ☺<br><strong>Thibaut P.</strong></div>
+            <div class="testimonial hidden">Merci Jérémy pour ton analyse.<br><strong>Frédéric B.</strong></div>
+            <div class="testimonial">Ah me voilà totalement rassurée !!<br><strong>Céline A.</strong></div>
+            <div class="testimonial hidden">Hello Jérémy, Merci pour toutes ces infos, je transfère au client 😊 Et si tu peux avoir des infos sur l'historique à l'occasion ce serait parfait ! Merci encore, Juliette<br><strong>Juliette B.</strong></div>
+            <div class="testimonial hidden">Merci beaucoup Jérémy !!<br><strong>Juliette B.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci beaucoup pour tous ces éléments, je vais me plonger dedans ! Bien à toi,<br><strong>Juliette B.</strong></div>
+            <div class="testimonial hidden">Merci beaucoup pour ces informations essentielles. @jeremy.harris du coup sur les 2 dernières semaines, tu aurais un graphe rapide et simple qui montre l'évolution du nombre de contacts ? Merci ! Excellente journée ! Bien cordialement,<br><strong>Renaud T.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy, Merci pour votre email.<br><strong>Margaux S.</strong></div>
+            <div class="testimonial hidden">Bonjour Jérémy merci de votre retour ok pour UK Cordialement<br><strong>Laurent E.</strong></div>
+            <div class="testimonial hidden">Ok Merci Nico et Jerem :-)<br><strong>Manon K.</strong></div>
+            <div class="testimonial">Tu gères merci :) Sent from a tiny keyboard<br><strong>Laurane C.</strong></div>
+            <div class="testimonial hidden"><br><strong>.</strong></div>
+
+            <div class="testimonial hidden"><br><strong>.</strong></div>
+            <a class="linkedin" href="https://www.linkedin.com/in/harg2001/details/recommendations/" target="_blank">View my LinkedIn recommendations</a>
+        </div>
+    </section>
+
+    <section class="btn_section">
+        <button class="btn" id="showMore">Show all testimonials</button>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="container">
+        <h2>They trust me</h2>
+        <div class="logos">
+            <img src="images/logo1.png">
+        </div>
+    </section>
+
+    <section class="btn_section">
+        <button class="btn" onclick="history.back()">Back</button>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2026 Jérémy "Harg" Harris. Email marketing campaigns for video games.</p>
+    </div>
+
+    </body>
+</html>
+
+<script>
+document.getElementById("showMore").onclick=function(){
+    document.querySelectorAll(".hidden").forEach(el=>{
+        el.style.display="block";
+    });
+        this.style.display="none";
+}
+</script>
